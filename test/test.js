@@ -1,6 +1,50 @@
 const expect = require('chai').expect;
 const fda = require('../index.js');
 
+describe('#foodDescription', function() {
+  it('returns a non-empty array', function (done) {
+    fda.foodDescription(function(data) {
+      expect(data).to.not.be.empty;
+      done();
+    });
+  });
+  // it('array contains objects', function(done) {
+  //   fda.abbreviated(function(data) {
+  //     const first = data[0];
+  //     expect(first).to.be.an('object');
+  //     expect(first.ndbNo).to.be.a('number');
+  //     done();
+  //   });
+  // });
+});
+
+describe('#_parseAbbreviatedLineToObject', function() {
+  var line = null;
+  var result = null;
+
+  before(function() {
+    line = "~43570~^~0800~^~Cereals ready-to-eat, POST, HONEY BUNCHES OF OATS, honey roasted~^~CEREALS RTE,POST,HONEY BUNCHES OF OATS,HONEY RSTD~^~~^~Post Foods, LLC~^~Y~^~~^0^~~^^^^";
+    result = fda._parseFoodLineToObject(line);
+  });
+
+  it('takes a line from the file and returns an object with all fields', function() {
+    expect(result.ndbNo).to.equal('43570')
+    expect(result.foodGroupCode).to.equal('0800')
+    expect(result.longDescription).to.equal("Cereals ready-to-eat, POST, HONEY BUNCHES OF OATS, honey roasted")
+    expect(result.shortDescription).to.equal("CEREALS RTE,POST,HONEY BUNCHES OF OATS,HONEY RSTD")
+    expect(result.commonName).to.equal("")
+    expect(result.manufacturer).to.equal("Post Foods, LLC")
+    expect(result.survey).to.equal(true)
+    expect(result.refuseDescription).to.equal("")
+    expect(result.refuse).to.equal(0)
+    expect(result.scientificName).to.equal("")
+    expect(result.nitrogenFactor).to.equal(0)
+    expect(result.proteinFactor).to.equal(0)
+    expect(result.fatFactor).to.equal(0)
+    expect(result.carbohydrateFactor).to.equal(0)
+  });
+});
+
 describe('#abbreviated', function() {
   it('returns a non-empty array', function (done) {
     fda.abbreviated(function(data) {
@@ -12,23 +56,23 @@ describe('#abbreviated', function() {
     fda.abbreviated(function(data) {
       const first = data[0];
       expect(first).to.be.an('object');
-      expect(first.ndbNo).to.be.a('number');
+      expect(first.ndbNo).to.be.a('string');
       done();
     });
   });
 });
 
-describe('#_parseLineToObject', function() {
+describe('#_parseAbbreviatedLineToObject', function() {
   var line = null;
   var result = null;
 
   before(function() {
     line = "~09522~^~CRANBERRY JUC BLEND,100% JUC,BTLD,W/ ADDED VIT C & CA~^88.60^45^0.27^0.12^0.10^10.91^0.1^9.80^19^0.08^5^8^76^6^0.05^0.016^0.067^0.1^31.5^0.005^0.015^0.094^^0.018^18^0^18^18^1.8^0.00^25^1^0^0^15^0^0^68^0.01^0.0^0^0.0^0.002^0.002^0.002^0^200^~6.75 fl oz~^240^~8 fl oz~^0";
-    result = fda._parseLineToObject(line);
-  }),
+    result = fda._parseAbbreviatedLineToObject(line);
+  });
 
   it('takes a line from the file and returns an object with all fields', function() {
-    expect(result.ndbNo).to.equal(9522);
+    expect(result.ndbNo).to.equal('09522');
     expect(result.shortDescription).to.equal("CRANBERRY JUC BLEND,100% JUC,BTLD,W/ ADDED VIT C & CA");
     expect(result.water).to.equal(88.60)
     expect(result.calories).to.equal(45)

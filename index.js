@@ -10,7 +10,7 @@ module.exports = {
     });
 
     lineReader.on('line', (line) => {
-      data.push(this._parseLineToObject(line));
+      data.push(this._parseAbbreviatedLineToObject(line));
     });
 
     lineReader.on('close', function() {
@@ -18,14 +18,14 @@ module.exports = {
     });
   },
 
-  _parseLineToObject(line) {
+  _parseAbbreviatedLineToObject(line) {
     var fields = _.split(line, '^');
     var strippedFields = _.map(fields, function(field) {
       return _.trim(field, '~');
     });
 
     return {
-      ndbNo: _.toInteger(strippedFields[0]),
+      ndbNo: strippedFields[0],
       shortDescription: strippedFields[1],
       water: _.toNumber(strippedFields[2]),
       calories: _.toNumber(strippedFields[3]),
@@ -79,8 +79,44 @@ module.exports = {
       weight2Description: strippedFields[51],
       refusePercent: _.toNumber(strippedFields[52])
     }
+  },
+  foodDescription(cb) {
+    var data = [];
 
+    var lineReader = require('readline').createInterface({
+      input: require('fs').createReadStream('data/FOOD_DES.txt')
+    });
+
+    lineReader.on('line', (line) => {
+      // data.push(this._parseFoodLineToObject(line));
+      data.push({});
+    });
+
+    lineReader.on('close', function() {
+      cb(data);
+    });
+  },
+  _parseFoodLineToObject(line) {
+    var fields = _.split(line, '^');
+    var strippedFields = _.map(fields, function(field) {
+      return _.trim(field, '~');
+    });
+
+    return {
+      ndbNo: strippedFields[0],
+      foodGroupCode: strippedFields[1],
+      longDescription: strippedFields[2],
+      shortDescription: strippedFields[3],
+      commonName: strippedFields[4],
+      manufacturer: strippedFields[5],
+      survey: strippedFields[6] === 'Y',
+      refuseDescription: strippedFields[7],
+      refuse: _.toNumber(strippedFields[8]),
+      scientificName: strippedFields[9],
+      nitrogenFactor: _.toNumber(strippedFields[10]),
+      proteinFactor: _.toNumber(strippedFields[11]),
+      fatFactor: _.toNumber(strippedFields[12]),
+      carbohydrateFactor: _.toNumber(strippedFields[13])
+    };
   }
-
-
 }
