@@ -9,14 +9,15 @@ module.exports = {
       input: require('fs').createReadStream('data/ABBREV.txt')
     });
 
-    lineReader.on('line', function (line) {
-      data.push(line);
+    lineReader.on('line', (line) => {
+      data.push(this._parseLineToObject(line));
     });
 
     lineReader.on('close', function() {
       cb(data);
     });
   },
+
   _parseLineToObject(line) {
     var fields = _.split(line, '^');
     var strippedFields = _.map(fields, function(field) {
