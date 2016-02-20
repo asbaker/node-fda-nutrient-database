@@ -27,6 +27,13 @@
     "chai": "^3.5.0",
     "mocha": "^2.4.5"
   },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "data/ABBREV.txt",
+    "data/FOOD_DES.txt"
+  ],
   "dependencies": {
     "lodash": "^4.5.0"
   }
