@@ -88,8 +88,7 @@ module.exports = {
     });
 
     lineReader.on('line', (line) => {
-      // data.push(this._parseFoodLineToObject(line));
-      data.push({});
+      data.push(this._parseFoodLineToObject(line));
     });
 
     lineReader.on('close', function() {

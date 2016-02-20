@@ -8,14 +8,14 @@ describe('#foodDescription', function() {
       done();
     });
   });
-  // it('array contains objects', function(done) {
-  //   fda.abbreviated(function(data) {
-  //     const first = data[0];
-  //     expect(first).to.be.an('object');
-  //     expect(first.ndbNo).to.be.a('number');
-  //     done();
-  //   });
-  // });
+  it('array contains objects', function(done) {
+    fda.foodDescription(function(data) {
+      const first = data[0];
+      expect(first).to.be.an('object');
+      expect(first.ndbNo).to.be.a('string');
+      done();
+    });
+  });
 });
 
 describe('#_parseAbbreviatedLineToObject', function() {

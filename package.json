@@ -6,8 +6,23 @@
   "scripts": {
     "test": "mocha"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/asbaker/node-fda-nutrient-database"
+  },
+  "keywords": [
+    "fda",
+    "nutrient",
+    "food",
+    "carbohydrate",
+    "fat",
+    "protein",
+    "sr28"
+  ],
+  "author": "Tony Baker <anthony.s.baker@gmail.com>",
+  "license": "MIT",
+  "bugs": "http://github.com/asbaker/node-fda-nutrient-database/issues",
+  "homepage": "http://github.com/asbaker/node-fda-nutrient-database",
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^2.4.5"
