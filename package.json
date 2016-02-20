@@ -1,0 +1,11 @@
+{
+  "name": "fda-nutrient-database",
+  "version": "1.0.0",
+  "description": "Release 28 of the FDA Nutrient Database for Standard Reference. Reference: US Department of Agriculture, Agricultural Research Service, Nutrient Data Laboratory. USDA National Nutrient Database for Standard Reference, Release 28. Version Current:  September 2015.  Internet:  http://www.ars.usda.gov/nea/bhnrc/ndl",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
