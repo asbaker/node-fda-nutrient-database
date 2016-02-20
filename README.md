@@ -5,7 +5,7 @@ US Department of Agriculture, Agricultural Research Service, Nutrient Data Labor
 This package includes helper functions for processing the FDA Nutrient Database for Standard Reference.
 
 
-## Fields
+## Abbreviated Fields
 
 The fields are defined on page 44 of the sr28_doc.pdf
 
@@ -66,6 +66,11 @@ The fields are defined on page 44 of the sr28_doc.pdf
 | weight2Description | Description of weight 2                     | '8 fl oz'                                               |
 | refusePercent      | Percent Refuse                              | 0                                                       |
 
+## Food Description Fields
+
+The fields are defined on page 35 of the sr28_doc.pdf
+
+
 
 ## Weights and Measures
 (From page 31 of sr28_doc.pdf)
@@ -88,10 +93,10 @@ The Weight file can be used to produce reports showing the household measure and
 const fda = require('fda-nutrient-database')
 
 nutrients = fda.abbreviated(cb)
-// This invokes the callback with an array of objects from the abreviated datafile
 
+This invokes the callback with an array of objects from the abreviated datafile:
 {
-  ndbNo: 9522,
+  ndbNo: '09522',
   shortDescription: 'CRANBERRY JUC BLEND,100% JUC,BTLD,W/ ADDED VIT C & CA',
   water: 88.6,
   calories: 45,
@@ -145,5 +150,31 @@ nutrients = fda.abbreviated(cb)
   weight2Description: '8 fl oz',
   refusePercent: 0
 }
+```
+
+
+
+
+```
+nutrients = fda.foodDescription(cb)
+
+This invokes the callback with an array of objects from the food description datafile:
+{
+  ndbNo: '44203',
+  foodGroupCode: '1400',
+  longDescription: 'Beverages, Cocktail mix, non-alcoholic, concentrated, frozen',
+  shortDescription: 'BEVERAGES,COCKTAIL MIX,NON-ALCOHOLIC,CONCD,FRZ',
+  commonName: '',
+  manufacturer: '',
+  survey: true,
+  refuseDescription: '',
+  refuse: 0,
+  scientificName: '',
+  nitrogenFactor: 6.25,
+  proteinFactor: 4,
+  fatFactor: 9,
+  carbohydrateFactor: 4
+}
+
 ```
 
