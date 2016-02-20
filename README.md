@@ -10,61 +10,61 @@ This package includes helper functions for processing the FDA Nutrient Database 
 The fields are defined on page 44 of the sr28_doc.pdf
 
 
- | Field              | Description                                 | Example                                                 |
- | -------            | -------------                               | ----------                                              |
- | ndbNo              | primarykey                                  | 9522                                                    |
- | shortDescription   | 60 character abbreviated description        | 'CRANBERRY JUC BLEND,100% JUC,BTLD,W/ ADDED VIT C & CA' |
- | water              | g/100g                                      | 88.6                                                    |
- | calories           | kcal/100g                                   | 45                                                      |
- | protein            | g/100g                                      | 0.27                                                    |
- | fat                | g/100g                                      | 0.12                                                    |
- | ash                | g/100g                                      | 0.1                                                     |
- | carbohydrate       | g/100g                                      | 10.91                                                   |
- | fiber              | g/100g                                      | 0.1                                                     |
- | sugar              | g/100g                                      | 9.8                                                     |
- | calcium            | mg/100g                                     | 19                                                      |
- | iron               | mg/100g                                     | 0.08                                                    |
- | magnesium          | mg/100g                                     | 5                                                       |
- | phosphorus         | mg/100g                                     | 8                                                       |
- | potassium          | mg/100g                                     | 76                                                      |
- | sodium             | mg/100g                                     | 6                                                       |
- | zinc               | mg/100g                                     | 0.05                                                    |
- | copper             | mg/100g                                     | 0.016                                                   |
- | manganese          | mg/100g                                     | 0.067                                                   |
- | selenium           | ug/100g                                     | 0.1                                                     |
- | vitaminC           | mg/100g                                     | 31.5                                                    |
- | thiamin            | mg/100g                                     | 0.005                                                   |
- | riboflavin         | mg/100g                                     | 0.015                                                   |
- | niacin             | mg/100g                                     | 0.094                                                   |
- | pantoAcid          | mg/100g                                     | 0                                                       |
- | vitaminB6          | mg/100g                                     | 0.018                                                   |
- | folateTotal        | ug/100g                                     | 18                                                      |
- | folicAcid          | ug/100g                                     | 0                                                       |
- | foodFolate         | ug/100g                                     | 18                                                      |
- | folateDFE          | ug/100g                                     | 18                                                      |
- | choline            | mg/100g                                     | 1.8                                                     |
- | vitaminB12         | ug/100g                                     | 0                                                       |
- | vitaminAIU         | IU/100g                                     | 25                                                      |
- | vitaminARAE        | ug retinol activity equivalents/100g        | 1                                                       |
- | retinol            | ug/100g                                     | 0                                                       |
- | alphaCarot         | ug/100g                                     | 0                                                       |
- | betaCarot          | ug/100g                                     | 15                                                      |
- | betaCrypt          | ug/100g                                     | 0                                                       |
- | lycopene           | ug/100g                                     | 0                                                       |
- | luteinZeazanthin   | ug/100g                                     | 68                                                      |
- | vitaminE           | mg/100g                                     | 0.01                                                    |
- | vitaminDMCG        | ug/100g                                     | 0                                                       |
- | vitaminDIU         | IU/100g                                     | 0                                                       |
- | vitaminK           | ug/100g                                     | 0                                                       |
- | saturatedFat       | g/100g                                      | 0.002                                                   |
- | monosaturatedFat   | g/100g                                      | 0.002                                                   |
- | polyunsaturatedFat | g/100g                                      | 0.002                                                   |
- | cholesterol        | mg/100g                                     | 0                                                       |
- | weight1            | W in the Weights and Measures formula below | 200                                                     |
- | weight1Description | Description of weight 1                     | '6.75 fl oz'                                            |
- | weight2            | W in the Weights and measures formula below | 240                                                     |
- | weight2Description | Description of weight 2                     | '8 fl oz'                                               |
- | refusePercent      | Percent Refuse                              | 0                                                       |
+| Field              | Description                                 | Example                                                 |
+| ------------------ | ------------------------------------------- | ------------------------------------------------------- |
+| ndbNo              | primarykey                                  | 9522                                                    |
+| shortDescription   | 60 character abbreviated description        | 'CRANBERRY JUC BLEND,100% JUC,BTLD,W/ ADDED VIT C & CA' |
+| water              | g/100g                                      | 88.6                                                    |
+| calories           | kcal/100g                                   | 45                                                      |
+| protein            | g/100g                                      | 0.27                                                    |
+| fat                | g/100g                                      | 0.12                                                    |
+| ash                | g/100g                                      | 0.1                                                     |
+| carbohydrate       | g/100g                                      | 10.91                                                   |
+| fiber              | g/100g                                      | 0.1                                                     |
+| sugar              | g/100g                                      | 9.8                                                     |
+| calcium            | mg/100g                                     | 19                                                      |
+| iron               | mg/100g                                     | 0.08                                                    |
+| magnesium          | mg/100g                                     | 5                                                       |
+| phosphorus         | mg/100g                                     | 8                                                       |
+| potassium          | mg/100g                                     | 76                                                      |
+| sodium             | mg/100g                                     | 6                                                       |
+| zinc               | mg/100g                                     | 0.05                                                    |
+| copper             | mg/100g                                     | 0.016                                                   |
+| manganese          | mg/100g                                     | 0.067                                                   |
+| selenium           | ug/100g                                     | 0.1                                                     |
+| vitaminC           | mg/100g                                     | 31.5                                                    |
+| thiamin            | mg/100g                                     | 0.005                                                   |
+| riboflavin         | mg/100g                                     | 0.015                                                   |
+| niacin             | mg/100g                                     | 0.094                                                   |
+| pantoAcid          | mg/100g                                     | 0                                                       |
+| vitaminB6          | mg/100g                                     | 0.018                                                   |
+| folateTotal        | ug/100g                                     | 18                                                      |
+| folicAcid          | ug/100g                                     | 0                                                       |
+| foodFolate         | ug/100g                                     | 18                                                      |
+| folateDFE          | ug/100g                                     | 18                                                      |
+| choline            | mg/100g                                     | 1.8                                                     |
+| vitaminB12         | ug/100g                                     | 0                                                       |
+| vitaminAIU         | IU/100g                                     | 25                                                      |
+| vitaminARAE        | ug retinol activity equivalents/100g        | 1                                                       |
+| retinol            | ug/100g                                     | 0                                                       |
+| alphaCarot         | ug/100g                                     | 0                                                       |
+| betaCarot          | ug/100g                                     | 15                                                      |
+| betaCrypt          | ug/100g                                     | 0                                                       |
+| lycopene           | ug/100g                                     | 0                                                       |
+| luteinZeazanthin   | ug/100g                                     | 68                                                      |
+| vitaminE           | mg/100g                                     | 0.01                                                    |
+| vitaminDMCG        | ug/100g                                     | 0                                                       |
+| vitaminDIU         | IU/100g                                     | 0                                                       |
+| vitaminK           | ug/100g                                     | 0                                                       |
+| saturatedFat       | g/100g                                      | 0.002                                                   |
+| monosaturatedFat   | g/100g                                      | 0.002                                                   |
+| polyunsaturatedFat | g/100g                                      | 0.002                                                   |
+| cholesterol        | mg/100g                                     | 0                                                       |
+| weight1            | W in the Weights and Measures formula below | 200                                                     |
+| weight1Description | Description of weight 1                     | '6.75 fl oz'                                            |
+| weight2            | W in the Weights and measures formula below | 240                                                     |
+| weight2Description | Description of weight 2                     | '8 fl oz'                                               |
+| refusePercent      | Percent Refuse                              | 0                                                       |
 
 
 ## Weights and Measures
@@ -90,7 +90,6 @@ const fda = require('fda-nutrient-database')
 nutrients = fda.abbreviated(cb)
 // This invokes the callback with an array of objects from the abreviated datafile
 
-```
 {
   ndbNo: 9522,
   shortDescription: 'CRANBERRY JUC BLEND,100% JUC,BTLD,W/ ADDED VIT C & CA',
