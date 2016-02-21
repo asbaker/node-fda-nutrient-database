@@ -1,12 +1,14 @@
 const fs = require('fs');
 const _ = require('lodash');
+const path = require('path');
+const readline = require('readline')
 
 module.exports = {
   abbreviated(cb) {
     var data = [];
 
-    var lineReader = require('readline').createInterface({
-      input: require('fs').createReadStream('data/ABBREV.txt')
+    var lineReader = readline.createInterface({
+      input: fs.createReadStream(path.join(__dirname, '/data/ABBREV.txt'))
     });
 
     lineReader.on('line', (line) => {
@@ -83,8 +85,8 @@ module.exports = {
   foodDescription(cb) {
     var data = [];
 
-    var lineReader = require('readline').createInterface({
-      input: require('fs').createReadStream('data/FOOD_DES.txt')
+    var lineReader = readline.createInterface({
+      input: fs.createReadStream(path.join(__dirname, '/data/FOOD_DES.txt'))
     });
 
     lineReader.on('line', (line) => {
