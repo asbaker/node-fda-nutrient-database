@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const fda = require('../index.js');
+const fda = require('../src/index.js');
 
 describe('#foodDescription', function() {
   it('returns a non-empty array', function (done) {

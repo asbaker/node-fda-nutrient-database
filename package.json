@@ -1,10 +1,13 @@
 {
   "name": "fda-nutrient-database",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Release 28 of the FDA Nutrient Database for Standard Reference. Reference: US Department of Agriculture, Agricultural Research Service, Nutrient Data Laboratory. USDA National Nutrient Database for Standard Reference, Release 28. Version Current:  September 2015.  Internet:  http://www.ars.usda.gov/nea/bhnrc/ndl",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "npm run lint && mocha",
+    "prepublish": ". ./scripts/prepublish.sh",
+    "lint": "eslint ./src",
+    "clean": "rm -rf fda-nutrient-database-*.tgz dist"
   },
   "repository": {
     "type": "git",
@@ -24,13 +27,22 @@
   "bugs": "http://github.com/asbaker/node-fda-nutrient-database/issues",
   "homepage": "http://github.com/asbaker/node-fda-nutrient-database",
   "devDependencies": {
+    "babel-cli": "^6.5.1",
+    "babel-core": "^6.5.2",
+    "babel-eslint": "^5.0.0",
+    "babel-plugin-transform-runtime": "^6.5.2",
+    "babel-polyfill": "^6.5.0",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-stage-2": "^6.5.0",
     "chai": "^3.5.0",
+    "eslint": "^2.2.0",
+    "eslint-plugin-babel": "^3.1.0",
     "mocha": "^2.4.5"
   },
   "files": [
     "LICENSE",
     "README.md",
-    "index.js",
+    "dist/index.js",
     "data/ABBREV.txt",
     "data/FOOD_DES.txt"
   ],

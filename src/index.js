@@ -1,19 +1,18 @@
 const fs = require('fs');
 const _ = require('lodash');
 const path = require('path');
-const readline = require('readline')
+const readline = require('readline');
 
 module.exports = {
   abbreviated(cb) {
     var data = [];
 
     var lineReader = readline.createInterface({
-      input: fs.createReadStream(path.join(__dirname, '/data/ABBREV.txt'))
+      input: fs.createReadStream(path.join(__dirname, '../data/ABBREV.txt'))
     });
 
-    lineReader.on('line', (line) => {
-      data.push(this._parseAbbreviatedLineToObject(line));
-    });
+    lineReader.on('line', line =>
+      data.push(this._parseAbbreviatedLineToObject(line)) );
 
     lineReader.on('close', function() {
       cb(data);
@@ -22,9 +21,7 @@ module.exports = {
 
   _parseAbbreviatedLineToObject(line) {
     var fields = _.split(line, '^');
-    var strippedFields = _.map(fields, function(field) {
-      return _.trim(field, '~');
-    });
+    var strippedFields = _.map(fields, field => _.trim(field, '~') );
 
     return {
       ndbNo: strippedFields[0],
@@ -80,18 +77,17 @@ module.exports = {
       weight2: _.toNumber(strippedFields[50]),
       weight2Description: strippedFields[51],
       refusePercent: _.toNumber(strippedFields[52])
-    }
+    };
   },
   foodDescription(cb) {
     var data = [];
 
     var lineReader = readline.createInterface({
-      input: fs.createReadStream(path.join(__dirname, '/data/FOOD_DES.txt'))
+      input: fs.createReadStream(path.join(__dirname, '../data/FOOD_DES.txt'))
     });
 
-    lineReader.on('line', (line) => {
-      data.push(this._parseFoodLineToObject(line));
-    });
+    lineReader.on('line', line =>
+                  data.push(this._parseFoodLineToObject(line)) );
 
     lineReader.on('close', function() {
       cb(data);
@@ -99,9 +95,7 @@ module.exports = {
   },
   _parseFoodLineToObject(line) {
     var fields = _.split(line, '^');
-    var strippedFields = _.map(fields, function(field) {
-      return _.trim(field, '~');
-    });
+    var strippedFields = _.map(fields, field => _.trim(field, '~') );
 
     return {
       ndbNo: strippedFields[0],
@@ -120,4 +114,4 @@ module.exports = {
       carbohydrateFactor: _.toNumber(strippedFields[13])
     };
   }
-}
+};
