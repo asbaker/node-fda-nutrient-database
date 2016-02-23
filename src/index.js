@@ -7,7 +7,7 @@ module.exports = {
   abbreviated(cb) {
     var data = [];
 
-    var lineReader = readline.createInterface({
+    var lineReader = readline.createInterface({terminal: false,
       input: fs.createReadStream(path.join(__dirname, '../data/ABBREV.txt'))
     });
 
@@ -82,7 +82,7 @@ module.exports = {
   foodDescription(cb) {
     var data = [];
 
-    var lineReader = readline.createInterface({
+    var lineReader = readline.createInterface({terminal: false,
       input: fs.createReadStream(path.join(__dirname, '../data/FOOD_DES.txt'))
     });
 
