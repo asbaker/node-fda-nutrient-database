@@ -97,7 +97,7 @@ const fda = require('fda-nutrient-database')
 
 nutrients = fda.abbreviated(cb)
 
-This invokes the callback with an array of objects from the abreviated datafile:
+This invokes the callback with an array of objects from the abbreviated datafile:
 {
   ndbNo: '09522',
   shortDescription: 'CRANBERRY JUC BLEND,100% JUC,BTLD,W/ ADDED VIT C & CA',
